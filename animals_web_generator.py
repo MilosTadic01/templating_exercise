@@ -30,25 +30,29 @@ def put_to_html(select_data):
             fd.write(html_str)
 
 
+def serialize_animal(fox):
+    select_data = ''
+    select_data += '<li class="cards__item">\n'
+    if 'name' in fox:
+        select_data += f'<div class="card__title">{fox["name"]}</div>\n'
+    select_data += '<p class="card__text">\n'
+    if 'characteristics' in fox and 'diet' in fox['characteristics']:
+        select_data += f"<strong>Diet: </strong>"
+        select_data += f"{fox['characteristics']['diet']}<br/>\n"
+    if 'locations' in fox and len(fox['locations']) > 0:
+        select_data += f"<strong>Location: </strong>"
+        select_data += f"{fox['locations'][0]}<br/>\n"
+    if 'characteristics' in fox and 'type' in fox['characteristics']:
+        select_data += f"<strong>Type: </strong>"
+        select_data += f"{fox['characteristics']['type']}<br/>\n"
+    select_data += '</p></li>\n'
+    return select_data
+
+
 def get_filtered_animals_data(animals_data):
-    select_data = ""
-    select_data += '<ul class="cards">'
+    select_data = ''
     for fox in animals_data:
-        select_data += '<li class="cards__item">\n'
-        if 'name' in fox:
-            select_data += f'<div class="card__title">{fox["name"]}</div>\n'
-        select_data += '<p class="card__text">\n'
-        if 'characteristics' in fox and 'diet' in fox['characteristics']:
-            select_data += f"<strong>Diet: </strong>"
-            select_data += f"{fox['characteristics']['diet']}<br/>\n"
-        if 'locations' in fox and len(fox['locations']) > 0:
-            select_data += f"<strong>Location: </strong>"
-            select_data += f"{fox['locations'][0]}<br/>\n"
-        if 'characteristics' in fox and 'type' in fox['characteristics']:
-            select_data += f"<strong>Type: </strong>"
-            select_data += f"{fox['characteristics']['type']}<br/>\n"
-        select_data += '</p></li>\n'
-    select_data += '</ul>'
+        select_data += serialize_animal(fox)
     return select_data.strip()
 
 
