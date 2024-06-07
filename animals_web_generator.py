@@ -27,13 +27,13 @@ def serialize_animal(fox):
     select_data += '<p class="card__text">\n'
     select_data += '<ul class="info_items">'
     if 'characteristics' in fox and 'diet' in fox['characteristics']:
-        select_data += f'<li class="info_items_li"><strong>Diet: </strong>'
+        select_data += f'<li class="info_itm_li"><strong>Diet: </strong>'
         select_data += f"{fox['characteristics']['diet']}</li>\n"
     if 'locations' in fox and len(fox['locations']) > 0:
-        select_data += f'<li class="info_items_li"><strong>Location: </strong>'
+        select_data += f'<li class="info_itm_li"><strong>Location: </strong>'
         select_data += f"{fox['locations'][0]}</li>\n"
     if 'characteristics' in fox and 'type' in fox['characteristics']:
-        select_data += f'<li class="info_items_li"><strong>Type: </strong>'
+        select_data += f'<li class="info_itm_li"><strong>Type: </strong>'
         select_data += f"{fox['characteristics']['type']}</li>\n"
     select_data += '</ul>'
     select_data += '</p></li>\n'
@@ -53,13 +53,13 @@ def get_filtered_animals_data(animals_data, skin_type):
 def get_user_input(animals_data):
     """Create a set for user to choose from and get their input. If an
     animal is missing the 'skin_type' key, it is not considered a candidate
-    because it can not match user's criterion."""
+    because it can not match the user's criterion."""
     skin_types = set()
     for fox in animals_data:
         if "skin_type" in fox["characteristics"]:
             skin_types.add(fox["characteristics"]["skin_type"])
     print("\nWe will only include animals with the skin type of your choice.")
-    print("Skin types:")
+    print("Skin types present in dataset:")
     for item in skin_types:
         print(f'- {item}')
     while True:
