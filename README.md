@@ -12,10 +12,10 @@ To install this project, clone the repository and install the dependencies in re
   pip3 install -r requirements.txt
 ```
 
-Furthermore, you'll need to register on api-ninjas.com in order to obtain an API key. Then replace *your_api_key* in the following command and run it:
+Furthermore, you'll need to register on api-ninjas.com in order to obtain an API key. Thereafter replace *your_api_key* in the following command and run it:
 
 ```bash
-  echo API_KEY='your_key_here' > .env
+  echo API_KEY='your_api_key' > .env
 ```
 ## Usage/Examples
 
