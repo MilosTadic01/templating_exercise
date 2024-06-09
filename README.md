@@ -9,7 +9,7 @@ This is a templating exercise which was gradually expanded to include interfacin
 To install this project, clone the repository and install the dependencies in requirements.txt. If on Windows, rely on `pip` rather than pip3.
 
 ```bash
-  pip3 install requirements.txt
+  pip3 install -r requirements.txt
 ```
 
 Furthermore, you'll need to register on api-ninjas.com in order to obtain an API key. Then do the following:
