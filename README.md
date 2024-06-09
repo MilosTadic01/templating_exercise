@@ -19,13 +19,19 @@ Furthermore, you'll need to register on api-ninjas.com in order to obtain an API
 ```
 ## Usage/Examples
 
+Program execution:
+
 ```bash
 python3 animals_web_generator.py
 ```
 
-Enter name of animal to produce a webpage about: *cheetah*
+Runtime printout:
+
+```bash
+Enter name of animal to produce a webpage about: cheetah
 
 Webpage was successfully generated in file animals.html
+```
 
 ## Feedback
 
