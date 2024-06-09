@@ -44,6 +44,9 @@ def get_filtered_animals_data(animals_data, usr_input):
         if ("name" in animal and
                 usr_input.lower() in animal["name"].lower()):
             select_data += serialize_animal(animal)
+    if select_data == '':
+        select_data = (f'<h1 style="color:red">api-ninja isn\'t aware of <br>'
+                       f'&lt; {usr_input} &gt;</h1>')
     return select_data.strip()
 
 
@@ -53,6 +56,7 @@ def main():
     animals_data = data_fetcher.fetch_data(usr_input)
     select_data = get_filtered_animals_data(animals_data, usr_input)
     put_to_html(select_data)
+    print(f"Webpage was successfully generated in file {DST_HTML_FILE}")
 
 
 if __name__ == "__main__":

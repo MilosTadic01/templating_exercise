@@ -22,8 +22,5 @@ def fetch_data(animal_name):
     },
     """
     url = API_ENDPOINT_PREFIX + animal_name + '&X-Api-Key=' + API_KEY
-    print(url)
     animals_data = requests.get(url).json()
-    print(type(animals_data))
-    print(animals_data)
     return animals_data
