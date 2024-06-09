@@ -1,6 +1,5 @@
 import data_fetcher
 
-
 DST_HTML_FILE = 'animals.html'
 
 
