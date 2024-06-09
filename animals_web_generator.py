@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 import data_fetcher
 
 DST_HTML_FILE = 'animals.html'

@@ -1,7 +1,8 @@
 import requests
+import os
 
+API_KEY = os.getenv('API_KEY')
 API_ENDPOINT_PREFIX = 'https://api.api-ninjas.com/v1/animals?name='
-API_KEY = 'a9gswUa/Srd5yh8f2zAQYg==vIQHjGXVE6AOGzpV'
 
 
 def fetch_data(animal_name):
