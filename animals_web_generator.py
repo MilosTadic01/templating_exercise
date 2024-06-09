@@ -1,4 +1,8 @@
-from dotenv import load_dotenv
+import sys
+from dotenv import load_dotenv, find_dotenv
+if not find_dotenv():
+    print("Error: .env file not found. Consult README.md")
+    sys.exit(1)
 load_dotenv()
 
 import data_fetcher
